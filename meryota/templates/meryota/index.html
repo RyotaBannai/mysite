@@ -1,0 +1,146 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'meryota/css/style.css' %}">
+<div id="grit-container">
+    <div class="content-header">
+        <div></div>
+        <div>
+            <p>{{ myinfo.name }}</p>
+            <p>High achiever with tech-company working experience</p>
+        </div>
+    </div>
+    <div class="content-bio">
+        <p>Email</p> 
+        <p>{{myinfo.email}}</p>
+        <p>Phone</p>
+        <p>{{myinfo.phone}}</p>
+    </div>
+    <div class="content-maininfo">
+        <div>
+            <p class="title-content">Skills</p>
+            <div>
+                {% if skills.skills_cplanguage %}
+                <p class='skill_category'>skills_cplanguage</p>
+                    {% for skill in skills.skills_cplanguage %}
+                    <span>{{ skill }}, </span>
+                    {% endfor %}
+                {% else %}
+                    <p>No skills are available.</p>
+                {% endif %}
+            </div>
+            <div>
+                {% if skills.skills_research %}
+                <p class='skill_category'> skills_research</p>
+                    {% for skill in skills.skills_research %}
+                    <span>{{ skill }}, </span>
+                    {% endfor %}
+                {% else %}
+                    <p>No skills are available.</p>
+                {% endif %}
+            </div> 
+            <div>
+                {% if skills.skills_other %}
+                <p class='skill_category'> skills_other</p>
+                    {% for skill in skills.skills_other %}
+                    <span>{{ skill }}, </span>
+                    {% endfor %}
+                {% else %}
+                    <p>No skills are available.</p>
+                    {% endif %}
+            </div> 
+        </div> 
+        <div>
+            <p class="title-content">Research</p>
+            <div>
+                    {% if research %}
+                        {% for info in research %}
+                        <div>
+                            <div>{{ info.date }}</div>
+                            <div>
+                                <p>{{ info.name }}</p>
+                                <p>{{ info.subtitle }}</p>
+                                <div>
+                                {% for detail in info.details %}
+                                <div><span class="list-dot"></span><span>{{ detail }}</span></div>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No skills are available.</p>
+                        {% endif %}
+            </div>
+        </div>
+        <div>
+            <p class="title-content">Work History</p>
+            <div>
+                    {% if work %}
+                        {% for info in work %}
+                        <div>
+                            <div><p>{{ info.date_from }}</p><p>{{ info.date_to }}</p></div>
+                            <div>
+                                <p>{{ info.position }}</p>
+                                <p>{{ info.corp }}</p>
+                                <div>
+                                {% for detail in info.details %}
+                                <div><span class="list-dot"></span><span>{{ detail }}</span></div>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No skills are available.</p>
+                        {% endif %}
+            </div>
+        </div>
+        <div>
+            <p class="title-content">Intern History</p>
+            <div>
+                    {% if intern %}
+                        {% for info in intern %}
+                        <div>
+                            <div><p>{{ info.date_from }}</p><p>{{ info.date_to }}</p></div>
+                            <div>
+                                <p>{{ info.position }}</p>
+                                <p>{{ info.corp }}</p>
+                                <div>
+                                {% for detail in info.details %}
+                                <div><span class="list-dot"></span><span>{{ detail }}</span></div>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No skills are available.</p>
+                        {% endif %}
+            </div>
+        </div>
+        <div>
+            <p class="title-content">Education</p>
+            <div>
+                <div></div>
+                
+                    {% if education %}
+                        {% for info in education %}
+                        <div>
+                            <div><p>{{ info.date_from }}</p><p>{{ info.date_to }}</p></div>
+                            <div>
+                                <p>{{ info.specification }}</p>
+                                <p>{{ info.name }}</p>
+                                <div>
+                                {% for detail in info.details %}
+                                <div><span class="list-dot"></span><span>{{ detail }}</span></div>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No skills are available.</p>
+                        {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
