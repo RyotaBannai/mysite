@@ -14,6 +14,3 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bioheroku.settings')
 
 application = get_wsgi_application()
-
-ALLOWED_HOSTS = ['localhost']
-ALLOWED_HOSTS = ['herokudjangoapp777.herokuapp.com']
