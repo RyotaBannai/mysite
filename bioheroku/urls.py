@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    path('', include('meryota.urls')),
     path('meryota/', include('meryota.urls')),
     path('admin/', admin.site.urls),
 ]
