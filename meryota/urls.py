@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('.well-known/acme-challenge/YI7ivk3q0YIK7E1GSpWjaC2kwvDJ4lGeKi8k9AGvHrs', views.acm, name='acm'),
+    path('.well-known/acme-challenge/acme-challenge/<slug:slug>', views.acm, name='acm'),
 ]

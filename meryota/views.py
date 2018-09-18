@@ -3,8 +3,8 @@ from django.template import loader
 
 from django.shortcuts import render
 
-def acm(request):
-    return HttpResponse("YI7ivk3q0YIK7E1GSpWjaC2kwvDJ4lGeKi8k9AGvHrs.97bDFrJbO2m1sKFAlAXa9D5w5gDpo_iGGgeOZORtKKo")
+def acm(request, slug=None):
+    return HttpResponse(slug)
 
 def index(request):
     #return HttpResponse("Hello, world. You're at the polls index.")
