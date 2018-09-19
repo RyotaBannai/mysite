@@ -37,7 +37,8 @@ def index(request):
         'skills_other':skills_other
         }
     work = [
-        {'corp':'Plate inc., Tokyo', 
+        {'corp':'Plate inc.', 
+        'address':'Nihonbashi 3-5-15, Chuō, Tokyo, Japan',
         'position':'System Engineer', 
         'details':[
             'Employees\' Salary Caliculation System Development and Maintainance with PHP and FuelPHP',
@@ -48,7 +49,8 @@ def index(request):
         'date_from':'May 2015-',
         'date_to': 'May 2016'
         },
-        {'corp':'GREE inc., Tokyo',
+        {'corp':'GREE inc.',
+        'address': 'Roppongi Hills Mori Tower, 6-10-1 Roppongi, Minato, Tokyo, Japan',
         'position':'Customer Service- for GREE provided Games', 
         'details':[
             'Market Research on other competitors\' games concerning target segments, usage policy, etc., to make better strategies for new launch.',
@@ -60,6 +62,7 @@ def index(request):
         ]
     intern = [
         {'corp':'Columbia West College, Los Angeles',
+        'address': '3435 Wilshire Blvd #1700, Los Angeles, CA 90010',
         'position':'Programmer', 
         'details':[
             'Web development for the college advertizement in four different languages and being used in multiple counties'], 

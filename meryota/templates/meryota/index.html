@@ -106,7 +106,7 @@
                             <div><p>{{ info.date_from }}</p><p>{{ info.date_to }}</p></div>
                             <div>
                                 <p>{{ info.position }}</p>
-                                <p>{{ info.corp }}</p>
+                                <p>{{ info.corp }}<span> | {{info.address}}</span></p>
                                 <div>
                                 {% for detail in info.details %}
                                 <div><span class="list-dot"></span><span>{{ detail }}</span></div>
@@ -129,7 +129,7 @@
                             <div><p>{{ info.date_from }}</p><p>{{ info.date_to }}</p></div>
                             <div>
                                 <p>{{ info.position }}</p>
-                                <p>{{ info.corp }}</p>
+                                <p>{{ info.corp }}<span> | {{info.address}}</span></p>
                                 <div>
                                 {% for detail in info.details %}
                                 <div><span class="list-dot"></span><span>{{ detail }}</span></div>

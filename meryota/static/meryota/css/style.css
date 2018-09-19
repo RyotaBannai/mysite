@@ -78,12 +78,16 @@ body {
   }
   .content-maininfo > div > div > div > div:nth-child(2) > p:nth-child(2) {
     font-size: 1.3em;
+    color: #086b7e;
+  }
+  .content-maininfo > div > div > div > div:nth-child(2) > p:nth-child(2) > span {
     color: #aaa;
+    font-size: 0.8em;
   }
   .content-maininfo > div > div > div > div:nth-child(2) > div > div {
     display: flex;
     vertical-align: middle;
-    margin: 2px 0 2px 5px;
+    margin: 5px 0 5px 5px;
   }
 
   .content-header {
