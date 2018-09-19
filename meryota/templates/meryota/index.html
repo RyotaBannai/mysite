@@ -4,22 +4,48 @@
     <div class="content-header">
         <div></div>
         <div>
-            <p>{{ myinfo.name }}</p>
-            <p>High achiever with tech-company working experience</p>
+            <p>{{ myinfo.Name }}</p>
+            <p>{{ myinfo.Chatchphraes }}</p>
         </div>
     </div>
     <div class="content-bio">
-        <p>Email</p> 
-        <p>{{myinfo.email}}</p>
-        <p>Phone</p>
-        <p>{{myinfo.phone}}</p>
+        <div>
+            <p>PERSONAL DETIALS</p>
+            <p>Email</p> 
+            <p>{{myinfo.Email}}</p>
+            <p>Phone</p>
+            <p>{{myinfo.Phone}}</p>
+            <p>GPA(Undergraduate)</p>
+            <p>{{myinfo.GPA}}</p>
+        </div>
+        <div>
+            <p>EXTERNAL LINKS</p>
+            <p>Website</p>
+            <p><a href='{{myinfo.Website}}'>{{myinfo.Website}}</a></p>
+            <p>Advertizement page at an intern</p>
+            <p><a href='{{myinfo.Links.cwc}}'>{{myinfo.Links.cwc}}</a></p>
+            <p>My latent Git</p>
+            <p><a href='{{myinfo.Links.git}}'>{{myinfo.Links.git}}</a></p>
+            <p>Thesis PDF</p>
+            <p><a href="{% static 'meryota/pdf/thesis2016.pdf' %}">Summary of senior thesis in 2016</a><p>
+        </div>
     </div>
     <div class="content-maininfo">
+        <div>
+            <p class="title-content">Objective</p>
+            <div>
+                {% if objective %}
+                    <span>{{ objective }}</span>
+                {% else %}
+                    <p>No objective is right now.</p>
+                {% endif %}
+            </div>
+        </div>
         <div>
             <p class="title-content">Skills</p>
             <div>
                 {% if skills.skills_cplanguage %}
-                <p class='skill_category'>skills_cplanguage</p>
+                <p class='skill_category'>Languages</p>
                     {% for skill in skills.skills_cplanguage %}
                     <span>{{ skill }}, </span>
                     {% endfor %}
@@ -29,7 +55,7 @@
             </div>
             <div>
                 {% if skills.skills_research %}
-                <p class='skill_category'> skills_research</p>
+                <p class='skill_category'>Research</p>
                     {% for skill in skills.skills_research %}
                     <span>{{ skill }}, </span>
                     {% endfor %}
@@ -39,7 +65,7 @@
             </div> 
             <div>
                 {% if skills.skills_other %}
-                <p class='skill_category'> skills_other</p>
+                <p class='skill_category'>Others</p>
                     {% for skill in skills.skills_other %}
                     <span>{{ skill }}, </span>
                     {% endfor %}

@@ -12,14 +12,24 @@ def index(request):
     #latest_question_list = Question.objects.order_by('-pub_date')[:5]
     #context = {'latest_question_list': latest_question_list}
     myinfo = {
-        'name': 'Ryota Bannai', 
-        'email': 'cy12161@shibauta-it.ac', 
-        'phone':'+13236139942',
-        'GPA': '3.38',
+        'Name': 'Ryota Bannai', 
+        'Chatchphraes': 'High achiever with an AI reseach and tech-industry experiences, seeking Computer Science education in MS course',
+        'Email': 'cy12161@shibaura-it.ac.jp', 
+        'Phone':'+13236139942',
+        'GPA': '3.38/ 4.00',
+        'Website': 'http://www.ryotabannai.us',
+        'Motto':[
+            '',
+            ''],
+        'Links':{
+            'cwc':'https://www.columbiawestcollege.edu/demo/',
+            'git':'https://github.com/RyotaBannai',
+        },
         }
-    objection = ''
-    skills_cplanguage = ['C','Python(Fluent)','Javascript(Fluent)','Node.js','PHP(Fluent)']
-    skills_research = ['Coding NLP, GA','Numpy','matplotlib','coffe','Data Cleansing','Mysql']
+    personalsummary = ''
+    objective = 'I\'m seeking an education to spericialize in Compuer Vision field. With this skills I\'d like to contribute to an AI industry, specifically Self-Driving system development and space exploration technologies, after gradation.'
+    skills_cplanguage = ['C','Python(and Django)','Javascript','Node.js','PHP(and FuelPHP)']
+    skills_research = ['Coding NLP and GA','Numpy','Matplotlib','Caffe','Data Cleansing','SQL']
     skills_other =['Git', 'Typing- ave. 85/wpm, max. 118/wpm (as of Sep, 2018) according to Typeracer']
     skills = {
         'skills_cplanguage':skills_cplanguage, 
@@ -27,56 +37,59 @@ def index(request):
         'skills_other':skills_other
         }
     work = [
-        {'corp':'GREE inc., Tokyo',
-        'position':'Customer Service- for GREE provided Games', 
-        'details':[
-            'Market Researching on other competitors\' games, such as target segments, and contributed to make strategies.',
-            'Monitoring an abuse and a violation to the game usage from users and other abnormal activities, such as a record of huge payment.'], 
-        'date_from':'Feb 2015-',
-        'date_to': 'May 2015'
-        }, 
         {'corp':'Plate inc., Tokyo', 
         'position':'System Engineer', 
         'details':[
-            'Project: Employees\' Salary Caliculation System Development and Maintainance with PHP and FuelPHP',
-            'Project: A self-testing system for Products by using Selenium WebDriver - Test-Driven Development',
-            'Project: Meeting Room Booking System for employees with Google Calender like functions, such as draggable, plan repeat. etc.',
-            'Senimor: Gave a Node.js step by step turorial seminor for System Engineer department'
+            'Employees\' Salary Caliculation System Development and Maintainance with PHP and FuelPHP',
+            'A self-testing system for Products by using Selenium WebDriver - Test-Driven Development',
+            'Meeting room reservation system for employees, including Google calender like functions, such as draggable, plan repetition, etc.',
+            'Shared the Node.js step by step turorial seminor for System Engineer department'
         ], 
         'date_from':'May 2015-',
         'date_to': 'May 2016'
-        }
+        },
+        {'corp':'GREE inc., Tokyo',
+        'position':'Customer Service- for GREE provided Games', 
+        'details':[
+            'Market Research on other competitors\' games concerning target segments, usage policy, etc., to make better strategies for new launch.',
+            'Monitoring an abusive, or an abnormal activities, such as huge payment at once and other violations to the game usage.'], 
+        'date_from':'Feb 2015-',
+        'date_to': 'May 2015'
+        }, 
+        
         ]
     intern = [
         {'corp':'Columbia West College, Los Angeles',
         'position':'Programmer', 
         'details':[
-            'Development of Advertizing Landing Webpages in four different languages and being used in multiple counties'], 
+            'Web development for the college advertizement in four different languages and being used in multiple counties'], 
         'date_from':'Jun 2018-',
         'date_to': 'Present'
         }
         ]    
     research = [
         {'name':'An Artificial Chef',
-        'subtitle': 'Automatic creation of cuisine recipes with Neural Network and genetic algorithm',
+        'subtitle': 'Automatic creation of cuisine recipes with Neural Network and GA(genetic algorithm)',
         'details':[
-            '',
-            ], 
+            'With Supervised Learning by using the online recipe site, Cockpad, a recipe evaluation component rates created recipe with a range 0- 5.',
+            'Recipe creation compornent uses existing recipes on Cockpad, and creates new one with GA.' ,
+            'In data replacement caused by mutation the component switches an ingridient with another similar one by rule which I prepared beforehand.'], 
         'date':'2016'
         }
         ]
     education = [
-        {'name': 'Shibaura Institute of Techonology, Japan',
-        'specification':'Engineering and Design, Robotics and Information Course', 
-        'details':['Study information design, software design, and mechatronics design, and learn about mechatronics, motion control, and similar fields.',],
-        'date_from':'Apl 2012-','date_to': 'May 2016',
-        },
         {'name': 'Columbia West College, Los Angeles', 
         'specification':'ESL', 
         'details':[
             'The best student of month out of 300 students in Nob. 2017',
             '163% improvement of TOEFL score since the first test '],
-        'date_from':'Jul 2016-','date_to': 'Present'}]
+        'date_from':'Jul 2016-','date_to': 'Present'},
+        {'name': 'Shibaura Institute of Techonology, Japan',
+        'specification':'Engineering and Design, Robotics and Information Course, Bachelor degree', 
+        'details':['Study information design, software design, and mechatronics design, and learn about mechatronics, motion control, and similar fields.',],
+        'date_from':'Apl 2012-','date_to': 'May 2016',
+        },
+        ]
 
-    context = {'myinfo':myinfo,'objection':objection, 'skills': skills, 'education': education, 'work': work,'intern':intern, 'research':research}
+    context = {'myinfo':myinfo,'objective':objective, 'skills': skills, 'education': education, 'work': work,'intern':intern, 'research':research}
     return render(request, 'meryota/index.html', context)
