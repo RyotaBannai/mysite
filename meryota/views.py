@@ -64,9 +64,9 @@ def vote(request, question_id):
 
 class Cv(ListView):
     template_name = 'meryota/cv.html'
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
+    #@method_decorator(login_required)
+    #def dispatch(self, *args, **kwargs):
+    #    return super().dispatch(*args, **kwargs)
     myinfo = {
         'Name': 'Ryota Bannai', 
         'Chatchphraes': 'High achiever with an AI reseach and tech-industry experiences, seeking Computer Science education in MS course',
