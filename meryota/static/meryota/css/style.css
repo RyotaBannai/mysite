@@ -17,6 +17,7 @@ body {
     background-color: #7E1B08;
     height: 100%;
     padding: 20px 15px 15px;
+    overflow-wrap: break-word;
     color: #efd8d1;
     -webkit-box-shadow: 2px 0px 5px -2px rgba(126, 27, 8, 0.75);
     -moz-box-shadow: 2px 0px 5px -2px rgba(126, 27, 8, 0.75);

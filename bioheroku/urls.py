@@ -18,7 +18,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('', include('meryota.urls')),
-    path('.well-known/acme-challenge/YI7ivk3q0YIK7E1GSpWjaC2kwvDJ4lGeKi8k9AGvHrs', include('meryota.urls')),
+    #path('.well-known/acme-challenge/YI7ivk3q0YIK7E1GSpWjaC2kwvDJ4lGeKi8k9AGvHrs', include('meryota.urls')),
     path('meryota/', include('meryota.urls')),
     path('admin/', admin.site.urls),
 ]
