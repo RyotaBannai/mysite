@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'bioheroku.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    #local
-    'default': { 'ENGINE': 'django.db.backends.sqlite3', 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'), }
-    #heroku
-    #'default': dj_database_url.config(),
-}
+DATABASES = {'default': { 'ENGINE': 'django.db.backends.sqlite3', 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'), }}
+
+ENVIRONMENT = 'production'
+DATABASES['default'] = dj_database_url.config(
+    default='postgresql-colorful-58370'
+)
 
 
 # Password validation
