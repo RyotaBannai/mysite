@@ -85,7 +85,8 @@ DATABASES = {
     #heroku
     #'default': dj_database_url.config(),
 }
-export DATABASE_URL="postgres://pppjplgkkowrif:cd01f4d697c4110b3c9bcb093171ff11c0fe00d3100c796004757636b7d91ad2@ec2-174-129-35-61.compute-1.amazonaws.com:5432/d4bclo9hvoe79t"
+export DATABASE_URL="postgres://ryotabannai0528@gmail.com:bannai552828@herokudjangoapp777.herokuapp.com:5431/postgresql-colorful-58370"
+#export DATABASE_URL="postgres://pppjplgkkowrif:cd01f4d697c4110b3c9bcb093171ff11c0fe00d3100c796004757636b7d91ad2@ec2-174-129-35-61.compute-1.amazonaws.com:5432/d4bclo9hvoe79t"
 
 
 # Password validation
