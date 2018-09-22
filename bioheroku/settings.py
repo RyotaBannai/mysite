@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'bioheroku.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-    #'default': dj_database_url.config(default='postgres://localhost:5431/ryota')
+    #local
+    #'default': { 'ENGINE': 'django.db.backends.sqlite3', 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'), }
+    #heroku
+    'default': dj_database_url.config(),
 }
+export DATABASE_URL="postgres://pppjplgkkowrif:cd01f4d697c4110b3c9bcb093171ff11c0fe00d3100c796004757636b7d91ad2@ec2-174-129-35-61.compute-1.amazonaws.com:5432/d4bclo9hvoe79t"
 
 
 # Password validation
