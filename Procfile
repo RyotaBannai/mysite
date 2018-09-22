@@ -1,1 +1,1 @@
-web: gunicorn bioheroku.wsgi --log-file -
+web: gunicorn bioheroku.wsgi
