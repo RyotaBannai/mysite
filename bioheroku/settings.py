@@ -140,3 +140,5 @@ DATABASES['default'].update(prod_db)
 
 #enable print func
 #NOSE_ARGS = ['--nocapture', '--nologcapture',]
+
+#packages=['meryota']
