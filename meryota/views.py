@@ -62,6 +62,35 @@ def vote(request, question_id):
         # user hits the Back button.
         return HttpResponseRedirect(reverse('meryota:results', args=(question.id,)))
 
+class Sp(ListView):
+    template_name = 'meryota/sp.html'
+    info = {
+        'myinfo': {
+            'Name': 'Ryota Bannai', 
+            'Chatchphraes': 'High achiever with an AI reseach and tech-industry experiences, seeking Computer Science education in MS course',
+            'Email': 'cy12161@shibaura-it.ac.jp', 
+            'Phone':'+13236139942',
+            'GPA': '3.38/ 4.00',
+            'Website': 'http://www.ryotabannai.us',
+            'Motto':[
+                '',
+                ''],
+            'Links':{
+                'cwc':'https://www.columbiawestcollege.edu/demo/',
+                'git':'https://github.com/RyotaBannai',
+                'medium':'https://medium.com/@ryotabannai/sync-sqlite-on-django-with-postgresql-on-heroku-56f2bfbc0d5d'
+            },
+        },
+        'state':{
+            'history_1': "I had experienced 311 earthquake in 2011, which struck Fukushima where I used to live until the end of high school term. Though my place was not near to the coast of the city of Iwaki, where suffered the most, there were a lot of concerns for residents, especially for students, since they had to study in the gymnasium with partitions, in the laboratories, or any place available would be utilized until temporary facilities were built. By the big earthquake, main school building was obliterated. During about a half year after this event Fukushima and the areas nearby Fukushima were running out of resource such as a gas, foods, beverages. I got used to the routine that my family woke up at 4 am or so and waited in line to ensure that we could get those resources before they got out of stock. Even in those harsh condition, I, as a student, had to kept myself under control and focused on what I needed to do for my later life especially because I had the upcoming university exam just after 10 months. It turned out that I got in an university in Japan, and fortunately now I get a chance to study further in United States. I believe that with higher skills and knowledge that I would acquire at a selective university, I will be able to contribute more to my community’s development so that it would become the resistant place toward natural disasters such as what I had experienced at high school.",
+            'history_2': "In 2012 I got accepted by Shibaura Institute of Technology in Engineering and Design department, which offers a variety of fields. I learnt areas of architecture, product design, manufacturing, and computer science in first two years, and at the  beginning of junior year I chose computer science for my profession. In the same year, I decided to grasp the idea of what graduates with CS degree do out there. So I made an attempt to seek experience off campus by applying a part-time job in a tech-company. Thankfully, despite the fact that they had never hired a part-time employee before, GREE, inc. offered me a customer service job. I mainly dealt with different kinds of customers' troubles in the usage of GREE online games. With those usage data I also helped developers to make better strategies and policies. Though I did not belong to technical teams to develop games, I met various people who are highly skilled in his/her profession, are globally experienced, or are foreigners. I was lucky  that since GREE is one of the biggest startup since 2000, I could be surrounded by great people. After all, I thought I needed to experience more technical skills to see what CS students could do for company, more broadly for my community. I gained a next opportunity at another tech-company as a system engineer. I skilled in web development, but more importantly I found a lot of foreign programmers from French, Spain, Mexico, China, and the working environment was unusually diverse in terms of ethnicity in Japan. Working among them had changed my perspectives especially on how important English is, how different our cultures are, but at the same time how similar the way we feel is.",
+            'sumup':"I strongly believe that I can acquire wider and unique perspectives by staying outside Japan. The global experience would allow me to make better contribution to society with the personal capacity that I facilitate communications between different nations and different people. And that would help to strength their relationship, enriching co-development.",
+        }
+    }
+    context = {'info': info}
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, self.context)
+
 class Cv(ListView):
     template_name = 'meryota/cv.html'
     #@method_decorator(login_required)
@@ -84,7 +113,7 @@ class Cv(ListView):
         },
         }
     personalsummary = ''
-    objective = 'I\'m seeking an education to spericialize in Compuer Vision field. With this skills I\'d like to contribute to an AI industry, specifically Self-Driving system development and space exploration technologies, after gradation.'
+    objective = 'I\'m seeking an education to specialize in Computer Vision field. With this skills I\'d like to contribute to an AI industry, specifically Self-Driving system development and space exploration technologies, after graduation.'
     skills_cplanguage = ['C','Python(and Django)','Javascript','Node.js','PHP(and FuelPHP)']
     skills_research = ['Coding NLP and GA','Numpy','Matplotlib','Caffe','Data Cleansing','SQL']
     skills_other =['Git', 'Typing- ave. 85/wpm, max. 118/wpm (as of Sep, 2018) according to Typeracer']
@@ -98,10 +127,10 @@ class Cv(ListView):
         'address':'Nihonbashi 3-5-15, Chuō, Tokyo, Japan',
         'position':'System Engineer', 
         'details':[
-            'Employees\' Salary Caliculation System Development and Maintainance with PHP and FuelPHP',
+            'Employees\' Salary Calculation System Development and Maintenance with PHP and FuelPHP',
             'A self-testing system for Products by using Selenium WebDriver - Test-Driven Development',
-            'Meeting room reservation system for employees, including Google calender like functions, such as draggable, plan repetition, etc.',
-            'Shared the Node.js step by step turorial seminor for System Engineer department'
+            'Meeting room reservation system for employees, including Google calendar like functions, such as draggable, plan repetition, etc.',
+            'Shared the Node.js step by step tutorial seminar for System Engineer department'
         ], 
         'date_from':'May 2015-',
         'date_to': 'May 2016'
@@ -122,7 +151,7 @@ class Cv(ListView):
         'address': '3435 Wilshire Blvd #1700, Los Angeles, CA 90010',
         'position':'Programmer', 
         'details':[
-            'Web development for the college advertizement in four different languages and being used in multiple counties'], 
+            'Web development for the college advertisement in four different languages and being used in multiple counties'], 
         'date_from':'Jun 2018-',
         'date_to': 'Present'
         }
@@ -132,8 +161,8 @@ class Cv(ListView):
         'subtitle': 'Automatic creation of cuisine recipes with Neural Network and GA(genetic algorithm)',
         'details':[
             'With Supervised Learning by using the online recipe site, Cockpad, a recipe evaluation component rates created recipe with a range 0- 5.',
-            'Recipe creation compornent uses existing recipes on Cockpad, and creates new one with GA.' ,
-            'In data replacement caused by mutation the component switches an ingridient with another similar one by rule which I prepared beforehand.'], 
+            'Recipe creation component uses existing recipes on Cockpad, and creates new one with GA.' ,
+            'In data replacement caused by mutation the component switches an ingredient with another similar one by rule which I prepared beforehand.'], 
         'date':'2016'
         }
         ]
