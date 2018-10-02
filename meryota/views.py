@@ -62,8 +62,32 @@ def vote(request, question_id):
         # user hits the Back button.
         return HttpResponseRedirect(reverse('meryota:results', args=(question.id,)))
 
-class Sp(ListView):
-    template_name = 'meryota/sp.html'
+class Sop(ListView):
+    uname_short_to_official = {
+        'ucr': 'UCR',
+        'ucsc': 'UCSC',
+        'ucd': 'UCD',
+        'uci': 'UCI',
+        'ucsd': 'UCSD',
+        'usc_ds': 'USC',
+        'usc_se': 'USC',
+        'pennstate': 'Penn State University',
+        'ucolorado': 'University of Colorado',
+        'uu': 'University of Utah',
+        'umass': 'UMass Amherst',
+    }
+    def get(self, request, *args, **kwargs):
+        urldata = ("meryota", "sop", "%s.html")
+        self.template_name = '/'.join(urldata)
+        self.context = {
+            'self':self, 'request':request, 'args':args, 'kwargs':kwargs,
+            'uname':kwargs['uname'],
+            'uname_official': self.uname_short_to_official.get(kwargs['uname']),
+        }
+        return render(request, self.template_name % (kwargs['uname']), self.context)
+
+class Ps(ListView):
+    template_name = 'meryota/ps.html'
     info = {
         'myinfo': {
             'Name': 'Ryota Bannai', 
@@ -82,9 +106,9 @@ class Sp(ListView):
             },
         },
         'state':{
-            'history_1': "I had experienced 311 earthquake in 2011, which struck Fukushima where I used to live until the end of high school term. Though my place was not near to the coast of the city of Iwaki, where suffered the most, there were a lot of concerns for residents, especially for students, since they had to study in the gymnasium with partitions, in the laboratories, or any place available would be utilized until temporary facilities were built. By the big earthquake, main school building was obliterated. During about a half year after this event Fukushima and the areas nearby Fukushima were running out of resource such as a gas, foods, beverages. I got used to the routine that my family woke up at 4 am or so and waited in line to ensure that we could get those resources before they got out of stock. Even in those harsh condition, I, as a student, had to kept myself under control and focused on what I needed to do for my later life especially because I had the upcoming university exam just after 10 months. It turned out that I got in an university in Japan, and fortunately now I get a chance to study further in United States. I believe that with higher skills and knowledge that I would acquire at a selective university, I will be able to contribute more to my community’s development so that it would become the resistant place toward natural disasters such as what I had experienced at high school.",
-            'history_2': "In 2012 I got accepted by Shibaura Institute of Technology in Engineering and Design department, which offers a variety of fields. I learnt areas of architecture, product design, manufacturing, and computer science in first two years, and at the  beginning of junior year I chose computer science for my profession. In the same year, I decided to grasp the idea of what graduates with CS degree do out there. So I made an attempt to seek experience off campus by applying a part-time job in a tech-company. Thankfully, despite the fact that they had never hired a part-time employee before, GREE, inc. offered me a customer service job. I mainly dealt with different kinds of customers' troubles in the usage of GREE online games. With those usage data I also helped developers to make better strategies and policies. Though I did not belong to technical teams to develop games, I met various people who are highly skilled in his/her profession, are globally experienced, or are foreigners. I was lucky  that since GREE is one of the biggest startup since 2000, I could be surrounded by great people. After all, I thought I needed to experience more technical skills to see what CS students could do for company, more broadly for my community. I gained a next opportunity at another tech-company as a system engineer. I skilled in web development, but more importantly I found a lot of foreign programmers from French, Spain, Mexico, China, and the working environment was unusually diverse in terms of ethnicity in Japan. Working among them had changed my perspectives especially on how important English is, how different our cultures are, but at the same time how similar the way we feel is.",
-            'sumup':"I strongly believe that I can acquire wider and unique perspectives by staying outside Japan. The global experience would allow me to make better contribution to society with the personal capacity that I facilitate communications between different nations and different people. And that would help to strength their relationship, enriching co-development.",
+            'history_1': "I had experienced 311 earthquake in 2011, which struck Fukushima where I had lived for 18 years. Though my place was not near to the coast of the city of Iwaki, where suffered the most, there were a lot of concerns for residents, especially for students. They had to study in the gymnasium with partitions, in the laboratories, or any place available to utilize until temporary facilities were built. By the destructive mainshock, the campus was obliterated. Fukushima and the areas nearby Fukushima were running out of resource such as a gas, foods, beverages for a half year. I got used to the routine that my family woke up at 4 am or so and waited in line to ensure that we could get those resources before they got out of stock. I, as a student, had to kept myself under control and focused on what I needed to do for my later life especially because I faced the annual national exam for university just after 10 months. It turned out well academically, and fortunately now I get a chance to study further in United States. I believe that I can acquire top-notch skills and knowledge at a selective university, and that will give me the capacity to meaningfully help my community. I hope that my contribution will become one of the variables of resistant community toward natural disasters that I had experienced at high school.",
+            'history_2': "In 2012, I got accepted by Shibaura Institute of Technology, Engineering and Design. At the university I learnt the areas of architecture, product design, manufacturing, and computer science in the first two years, and then I chose CS for my major. In junior year, in the hope of seeing how graduates with CS degree interact with the society daily, I decided to have a job at tech-company.  Thankfully, in spite of the fact that they had never hired a part-time employee before, GREE, inc., which awarded the epithet \"one of three biggest startup since 2000\", offered me a customer service job. I chiefly dealt with different kinds of customers' troubles in the usage of GREE online games. With this data I helped developers to make better strategies and policies as well. Although I did not belong to technical teams to develop games, I met various people who are highly skilled in his/her profession, are globally experienced, or are foreigners. After all, I thought I needed to explore technical skills to see how CS students make an effort for company, more broadly for my community. I gained a next job at another tech-company as a system engineer, and I skilled in web development. I took several responsibilities in the company, but more importantly I worked with a lot of foreign programmers from French, Spain, Mexico, China, which was unconventionally diverse in Japan. These two environments reshaped my stereotypical ideas on how different each cultures are, but at the same time how similar we perceive and feel, and reminded me of the value of English.",
+            'sumup':"I strongly believe that I can obtain unique perspectives by thriving outside Japan. The global experience would allow me to make valuable contributions to society with the personal capacity to facilitate communications between different nations and different people. That would help them to strength their relationship, enriching holistic development.",
         }
     }
     context = {'info': info}

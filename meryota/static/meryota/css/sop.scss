@@ -1,9 +1,14 @@
+.paragraph::before{
+    content:'\2003\2003'
+}
 @import 'color';
 body{
     margin:0;
 }
-.paragraph::before{
-    content:'\2003\2003'
+@mixin txt_style_top {
+    color: #333;
+    font-size: 1.1em;
+    text-align: center;
 }
 .container{
     color: #212121;
@@ -18,12 +23,13 @@ body{
             text-align: center;
         }
     }
-    >div:nth-child(2){
-        >p{
-            color: #333;
-            font-size: 1.2em;
-            text-align: center;
-        }
+    >div:nth-child(2) > p{
+        margin-bottom: 10px;
+        @include txt_style_top;
+    }
+    >div.dep > p{
+        margin-top: 0px;
+        @include txt_style_top;
     }
     >div#statement{
         padding: 30px 90px 75px 90px;

@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  'body': {
-    'margin': [{ 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 0 }]
-  },
   'paragraph::before': {
     'content': ''\2003\2003''
+  },
+  'body': {
+    'margin': [{ 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 0 }]
   },
   'container': {
     'color': '#212121',
@@ -20,8 +20,15 @@ export default StyleSheet.create({
     'textAlign': 'center'
   },
   'container > div:nth-child(2) > p': {
+    'marginBottom': [{ 'unit': 'px', 'value': 10 }],
     'color': '#333',
-    'fontSize': [{ 'unit': 'em', 'value': 1.2 }],
+    'fontSize': [{ 'unit': 'em', 'value': 1.1 }],
+    'textAlign': 'center'
+  },
+  'container > divdep > p': {
+    'marginTop': [{ 'unit': 'px', 'value': 0 }],
+    'color': '#333',
+    'fontSize': [{ 'unit': 'em', 'value': 1.1 }],
     'textAlign': 'center'
   },
   'container > div#statement': {

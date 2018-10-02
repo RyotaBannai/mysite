@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'meryota/css/sop.css' %}">
+    <title>{% block title %}My amazing site{% endblock %}</title>
+</head>
+<body>
+    <div class='container'>
+        <div><p>
+            {% if uname == "pennstate" or uname == "ucolorado" or uname == "ucs_se" or uname == "ucs_ds"%}
+            Personal Statement
+            {% else %}
+            Statement of Purpose
+            {% endif %}  
+        </p></div>
+        <div><p>by Ryota Bannai</p></div>
+            {% if uname == "ucsd" %}
+            <div class = 'dep'><p>{% block depname %}{% endblock %}</p></div>
+            {% endif %}
+        <!--div id="sidebar">
+            {% block sidebar %}
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
+            {% endblock %}
+        </div-->
+        <div id="statement">
+            <div>
+                <p class='paragraph'>
+                    {% block content_intro %}{% endblock %}Even though my experiences as a system engineer and on the research of Neural Networks does not seem directly conductive to my success, I would like to pursue the field since I believe that it is the most prominent technology, as utilized in face recognition, augmented reality, and Auto-driving system.
+                </p>
+            
+            <p class='paragraph'>
+                    In 2012, I got accepted by Shibaura Institute of Technology, Engineering and Design. At the university I learnt the areas of architecture, product design, manufacturing, and computer science in the first two years, and then I chose CS for my major. In junior year, in the hope of seeing how graduates with CS degree interact with the society daily, I decided to have a job at tech-company. I joined in system engineer team and I skilled in web development. The biggest project that I had was development of an internal system of calculating 70 employees’ salaries. By using web framework and database, my team of two dedicated in interactive design to allow users to edit working time data like spread sheet, and to check their overtime and cumulative vacation time. While maintaining this, I took another responsibility of developing a booking system for meeting rooms. To implement a plan draggable function and a plan repeating option like Google Calendar, I acquired the knowledge of DOM, Javascript, and jQuery. A half year later, I was given the control of reviewing websites before release, and which allowed me to learn Test-Driven Development and Selenium WebDriver.
+                </p>
+                <p class='paragraph'>
+                    In senior year, I started to conduct an AI research. Inspired by the prior work by professor Richard Morris at Brigham Young university, I dug into the system that creates ingredients list for a cuisine recipe. The research concept of mine was that if the computer could replace ingredients with other similar ones in an existing recipes, it would be able to create a wide variety of new recipes which, I assumed, human hardly could think up with his/her tongue. I began to code Neural Networks and Genetic Algorithm in Python, then created the list of replaceable 212 pairs from 1,715,595 recipes provided by the online site, Cookpad. One of the pairs was ‘chocolate powder’ and ‘cinnamon power’. The ‘an ingredient-replacing system’ turned out to be able to invent three unconventional and tasty recipes in 10 times of its running. By being weakened the overfitting of its recipe-rating component, the system could leave more various recipes even if original recipes were rated low.
+                </p>
+                <p class='paragraph'>
+                    In MS course, even though my experience heavily weights on others, I hope to pursue Computer Vision fields. The objectives of mine is to gain the research methodologies as well as the wide knowledge of the fields so that even later I complete the course I can independently study on my research topic. I believe that at the selective university like {{uname_official}}, my day-to-day life will be more productive and meaningful. By surrounded with CV professionals, I’m certain that I would be able to absorb correct knowledge and skills that I won’t be able to possess by self-study.
+                    {% block content_end %}{% endblock %}
+                    In the next 10 months before the program would begin, I plan to take online courseworks, specifically Stanford CS231n, to gain basic skills on AI. Also I will self-teach Caffe and scikit-image as well as brush up my skills that I acquired in an undergraduate thesis. I hope that my career in CV will start from {{uname_official}}.
+                </p>
+            </div>
+        </div>
+        <footer>
+            <svg viewBox="0 -20 700 110" width="100%" height="110" preserveAspectRatio="none">
+            <path transform="translate(0, -20)" d="M0,10 c80,-22 240,0 350,18 c90,17 260,7.5 350,-20 v50 h-700" fill="#CEB964" />
+            <path d="M0,10 c80,-18 230,-12 350,7 c80,13 260,17 350,-5 v100 h-700z" fill="#00273F" />
+            </svg>
+        </footer>
+    </div>
+</body>
+</html>
