@@ -102,7 +102,7 @@ class Ps(ListView):
             'Links':{
                 'cwc':'https://www.columbiawestcollege.edu/demo/',
                 'git':'https://github.com/RyotaBannai',
-                'medium':'https://medium.com/@ryotabannai/sync-sqlite-on-django-with-postgresql-on-heroku-56f2bfbc0d5d'
+                'medium':'https://towardsdatascience.com/unpacking-pca-b5ea8bec6aa5'
             },
         },
         'state':{
@@ -133,7 +133,7 @@ class Cv(ListView):
         'Links':{
             'cwc':'https://www.columbiawestcollege.edu/demo/',
             'git':'https://github.com/RyotaBannai',
-            'medium':'https://medium.com/@ryotabannai/sync-sqlite-on-django-with-postgresql-on-heroku-56f2bfbc0d5d'
+            'medium':'https://towardsdatascience.com/unpacking-pca-b5ea8bec6aa5'
         },
         }
     personalsummary = ''
