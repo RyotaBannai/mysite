@@ -91,7 +91,7 @@ class Ps(ListView):
     info = {
         'myinfo': {
             'Name': 'Ryota Bannai', 
-            'Chatchphraes': 'High achiever with an AI reseach and tech-industry experiences, seeking Computer Science education in MS course',
+            'Chatchphraes': 'A high achiever with an AI reseach and tech-industry experiences, seeking Computer Science education in MS course',
             'Email': 'cy12161@shibaura-it.ac.jp', 
             'Phone':'+13236139942',
             'GPA': '3.38/ 4.00',
@@ -122,7 +122,7 @@ class Cv(ListView):
     #    return super().dispatch(*args, **kwargs)
     myinfo = {
         'Name': 'Ryota Bannai', 
-        'Chatchphraes': 'High achiever with an AI reseach and tech-industry experiences, seeking Computer Science education in MS course',
+        'Chatchphraes': 'High achiever with an AI reseach and tech-industry experiences, seeking further understanding in Computer Science MS course',
         'Email': 'cy12161@shibaura-it.ac.jp', 
         'Phone':'+13236139942',
         'GPA': '3.38/ 4.00',
@@ -137,10 +137,10 @@ class Cv(ListView):
         },
         }
     personalsummary = ''
-    objective = 'I\'m seeking an education to specialize in Computer Vision field. With this skills I\'d like to contribute to an AI industry, specifically Self-Driving system development and space exploration technologies, after graduation.'
+    objective = 'I\'m seeking an education in the hope of specializing in Computer Vision and AI. After finishing my graduate course, I\'m looking to work at 3D Mapping service, especially for autonomous vehicles, and eventually would like to be a system developer in the space industry.'
     skills_cplanguage = ['C','Python(and Django)','Javascript','Node.js','PHP(and FuelPHP)']
-    skills_research = ['Coding NLP and GA','Numpy','Matplotlib','Caffe','Data Cleansing','SQL']
-    skills_other =['Git', 'Typing- ave. 85/wpm, max. 118/wpm (as of Sep, 2018) according to Typeracer']
+    skills_research = ['Coding knowledge of NLP and GA','Caffe','Scikit-learn','Data Cleansing(Scipy, Pandas, Regex)','Matplotlib/Seaborn','Web Scraping','SQL']
+    skills_other =['Git', 'Typing: average 90/wpm, max 132/wpm (as of Dec 2018) according to Typeracer']
     skills = {
         'skills_cplanguage':skills_cplanguage, 
         'skills_research':skills_research, 
@@ -151,20 +151,20 @@ class Cv(ListView):
         'address':'Nihonbashi 3-5-15, Chuō, Tokyo, Japan',
         'position':'System Engineer', 
         'details':[
-            'Employees\' Salary Calculation System Development and Maintenance with PHP and FuelPHP',
-            'A self-testing system for Products by using Selenium WebDriver - Test-Driven Development',
-            'Meeting room reservation system for employees, including Google calendar like functions, such as draggable, plan repetition, etc.',
-            'Shared the Node.js step by step tutorial seminar for System Engineer department'
+            'Salary calculation system development and maintenance with PHP and FuelPHP',
+            'A self-testing system for products with Selenium WebDriver - Test-Driven Development',
+            'Meeting room reservation system for this company, including Google calendar like functions, such as draggable, plan repeating on certain days, etc.',
+            'Shared the Node.js step by step tutorial for System Engineer department'
         ], 
         'date_from':'May 2015-',
         'date_to': 'May 2016'
         },
         {'corp':'GREE inc.',
         'address': 'Roppongi Hills Mori Tower, 6-10-1 Roppongi, Minato, Tokyo, Japan',
-        'position':'Customer Service- for GREE provided Games', 
+        'position':'Customer Service at GREE SNS Platform', 
         'details':[
-            'Market Research on other competitors\' games concerning target segments, usage policy, etc., to make better strategies for new launch.',
-            'Monitoring an abusive, or an abnormal activities, such as huge payment at once and other violations to the game usage.'], 
+            'Market Research on other competitors\' games in terms of target segments, usage policy, etc., to make better strategies for later service launch.',
+            'Monitoring anormal activities, such as a huge payment within a short period and an abusive activities, such as violations to the game usage.'], 
         'date_from':'Feb 2015-',
         'date_to': 'May 2015'
         }, 
@@ -175,7 +175,7 @@ class Cv(ListView):
         'address': '3435 Wilshire Blvd #1700, Los Angeles, CA 90010',
         'position':'Programmer', 
         'details':[
-            'Web development for the college advertisement in four different languages and being used in multiple counties'], 
+            'Web development for the college\'s promotion page in four different languages, being used for six counties'], 
         'date_from':'Jun 2018-',
         'date_to': 'Present'
         }
@@ -184,9 +184,9 @@ class Cv(ListView):
         {'name':'An Artificial Chef',
         'subtitle': 'Automatic creation of cuisine recipes with Neural Network and GA(genetic algorithm)',
         'details':[
-            'With Supervised Learning by using the online recipe site, Cockpad, a recipe evaluation component rates created recipe with a range 0- 5.',
-            'Recipe creation component uses existing recipes on Cockpad, and creates new one with GA.' ,
-            'In data replacement caused by mutation the component switches an ingredient with another similar one by rule which I prepared beforehand.'], 
+            'Under Supervised Learning with the online recipe site, Cockpad, a recipe evaluation component rates recipes, which the system generates, with the range 0- 5.',
+            'Recipe creation component creates new recipes with GA, based on existing recipes on Cockpad.' ,
+            'By mutation, the component switches an ingredient with another similar one by rule which I prepared beforehand, and by crossover, it can breed new recipes.'], 
         'date':'2016'
         }
         ]
@@ -194,11 +194,11 @@ class Cv(ListView):
         {'name': 'Columbia West College, Los Angeles', 
         'specification':'ESL', 
         'details':[
-            'The best student of month out of 300 students in Nob. 2017',
+            'The best student of the month/ 300 students in Nobember 2017',
             '163% improvement of TOEFL score since the first test '],
         'date_from':'Jul 2016-','date_to': 'Present'},
         {'name': 'Shibaura Institute of Techonology, Japan',
-        'specification':'Engineering and Design, Robotics and Information Course, Bachelor degree', 
+        'specification':'Engineering and Design, Robotics and Information Design Course, Bachelor degree', 
         'details':['Study information design, software design, and mechatronics design, and learn about mechatronics, motion control, and similar fields.',],
         'date_from':'Apl 2012-','date_to': 'May 2016',
         },

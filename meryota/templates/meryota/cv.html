@@ -10,7 +10,7 @@
     </div>
     <div class="content-bio">
         <div>
-            <p>PERSONAL DETIALS</p>
+            <p>PERSONAL DETAILS</p>
             <p>Email</p> 
             <p>{{myinfo.Email}}</p>
             <p>Phone</p>
@@ -20,14 +20,14 @@
         </div>
         <div>
             <p>EXTERNAL LINKS</p>
+            <p>Senior thesis PDF</p>
+            <p><a href="{% static 'meryota/pdf/thesis2016.pdf' %}">Summary of senior thesis in 2016</a></p>
             <p>Website</p>
             <p><a href='{{myinfo.Website}}'>{{myinfo.Website}}</a></p>
             <p>Advertizement page at an intern</p>
             <p><a href='{{myinfo.Links.cwc}}'>{{myinfo.Links.cwc}}</a></p>
-            <p>My latent Git</p>
+            <p>Github</p>
             <p><a href='{{myinfo.Links.git}}'>{{myinfo.Links.git}}</a></p>
-            <p>Thesis PDF</p>
-            <p><a href="{% static 'meryota/pdf/thesis2016.pdf' %}">Summary of senior thesis in 2016</a></p>
             <p>Medium Article</p>
             <p><a href='{{myinfo.Links.medium}}'>Articles I wrote mainly about programming</a></p>
         </div>
